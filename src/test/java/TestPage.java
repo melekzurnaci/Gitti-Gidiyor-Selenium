@@ -1,6 +1,7 @@
 import Pages.BasketPage;
 import Pages.GittiGidiyorMainPage;
 import Pages.LoginPage;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,7 +37,14 @@ public class TestPage  {
         gittiGidiyorMainPage.search("Bilgisayar");
         gittiGidiyorMainPage.goToSecondPage();
         basketPage.addToBasket();
+        basketPage.priceControl();
+        basketPage.deleteProduct();
+        basketPage.basketControl();
 
+    }
+    @After
+    public void tearDown(){
+        driver.quit();
     }
 
 }
